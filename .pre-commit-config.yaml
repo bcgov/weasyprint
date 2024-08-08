@@ -1,0 +1,51 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+  - id: check-case-conflict
+  - id: check-executables-have-shebangs
+    files: \.sh
+  - id: check-json
+  - id: check-vcs-permalinks
+  - id: check-yaml
+    exclude: ^helm
+  - id: check-ast
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.13.0
+  hooks:
+  - id: pretty-format-yaml
+    exclude: ^helm
+    args: [--autofix, --indent, '2']
+- repo: https://github.com/Yelp/detect-secrets
+  rev: v1.5.0
+  hooks:
+  - id: detect-secrets
+    args: [--baseline, .secrets.baseline]
+- repo: local
+  hooks:
+  - id: python-format
+    name: black
+    entry: .bin/black.sh
+    language: script
+    files: \.py$
+    verbose: true
+    pass_filenames: true
+  - id: bash-format
+    name: format bash
+    entry: .bin/bash-format.sh
+    language: script
+    files: \.sh$
+    verbose: true
+    pass_filenames: true
+- repo: https://github.com/koalaman/shellcheck-precommit
+  rev: v0.10.0
+  hooks:
+  - id: shellcheck
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.3.0
+  hooks:
+  - id: codespell
+
+exclude: ^(CHANGELOG\.md)$
