@@ -5,6 +5,7 @@ on:
     branches:
     - main
     paths:
+    - .github/workflows/charts-release.yaml
     - charts/**
 
 concurrency:
