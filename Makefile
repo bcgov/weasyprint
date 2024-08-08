@@ -1,4 +1,4 @@
-.PHONY: install, dev, format
+.PHONY: install, dev, format, weasyprint
 
 install:
 	pip install -r requirements-dev.txt
@@ -9,3 +9,6 @@ dev:
 
 format:
 	black .
+
+weasyprint:
+	docker run -p 8080:8080 --pull always ghcr.io/bcgov/weasyprint:latest

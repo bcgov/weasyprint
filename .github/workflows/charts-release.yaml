@@ -1,0 +1,36 @@
+name: Release Charts
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - charts/**
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+    - uses: hmarr/debug-action@f7318c783045ac39ed9bb497e22ce835fdafbfe6
+    - uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+      with:
+        fetch-depth: 0
+
+    - name: Configure Git
+      run: |
+        git config user.name "$GITHUB_ACTOR"
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+    - name: Run chart-releaser
+      uses: helm/chart-releaser-action@d1e09fd16821c091b45aa754f65bae4dd675d425
+      with:
+        charts_dir: charts
+        config: cr.yaml
+        charts_repo_url: https://bcgov.github.io/helm-charts
+      env:
+        CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
