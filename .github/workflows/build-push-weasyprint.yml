@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-push-airflow:
+  build-push-weasyprint:
     runs-on: ubuntu-22.04
     timeout-minutes: 5
     permissions:
