@@ -2,5 +2,5 @@ apiVersion: v2
 name: weasyprint
 description: A Helm chart for WeasyPrint
 type: application
-version: 0.1.2
-appVersion: "62.3"
+version: 0.1.3
+appVersion: "0.1.0-weasyprint62.3"
