@@ -1,5 +1,7 @@
 # WeasyPrint Container
 
+This repository includes an API server and a Helm chart, offering endpoints for generating PDFs from HTML data with [WeasyPrint](https://github.com/Kozea/WeasyPrint).
+
 ## Usage
 
 ### Helm Chart Setup
@@ -34,6 +36,16 @@ weasyprint:
   nameOverride: weasyprint
   fullnameOverride: weasyprint
 ```
+
+### Running WeasyPrint Locally
+
+To run WeasyPrint, a tool for creating PDF documents, in your local development environment, use the following command:
+
+```sh
+docker run -p 8080:8080 --pull always ghcr.io/bcgov/weasyprint:latest
+```
+
+This will start WeasyPrint on `http://localhost:8080`.
 
 # API Documentation
 
@@ -93,3 +105,9 @@ This API provides a set of endpoints for basic status checks and PDF generation.
       Content-Disposition: attachment; filename='hello.pdf'
       ```
     - **Body**: The PDF file content.
+
+## Default Fonts
+
+### BC Sans Typeface (BCSans)
+
+BC Sans (2.0) is an open-source, evolving typeface designed to enhance the readability and effectiveness of digital services in government. The fonts can be accessed at: [BC Sans Typeface](https://www2.gov.bc.ca/gov/content/governments/services-for-government/policies-procedures/bc-visual-identity/bc-sans).
