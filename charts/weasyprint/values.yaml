@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/bcgov/weasyprint
+  repository: ghcr.io/bcgov/weasyapi
   tag: latest
   pullPolicy: Always
 

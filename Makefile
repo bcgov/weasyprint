@@ -11,4 +11,4 @@ format:
 	black .
 
 weasyprint:
-	docker run -p 8080:8080 --pull always ghcr.io/bcgov/weasyprint:latest
+	docker run -p 8080:8080 --pull always ghcr.io/bcgov/weasyapi:latest

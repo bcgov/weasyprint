@@ -36,7 +36,7 @@ jobs:
         registry-url: ${{ env.GITHUB_REGISTRY }}
         registry-username: ${{ github.actor }}
         registry-password: ${{ secrets.GITHUB_TOKEN }}
-        image-name: bcgov/weasyprint
+        image-name: bcgov/weasyapi
         docker-context: .
         docker-file: Dockerfile
         metadata-tags: |
