@@ -3,6 +3,16 @@ entries:
   weasyprint:
   - apiVersion: v2
     appVersion: 0.2.0-weasyprint62.3
+    created: "2025-03-26T17:38:29.475644552Z"
+    description: A Helm chart for WeasyPrint
+    digest: 10da8706e6b948c4a3b0b7c22b7c815bacfa0b635ba128a06f4dc861782ebec8
+    name: weasyprint
+    type: application
+    urls:
+    - https://github.com/bcgov/weasyprint/releases/download/weasyprint-0.1.7/weasyprint-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 0.2.0-weasyprint62.3
     created: "2024-08-22T19:47:11.223886753Z"
     description: A Helm chart for WeasyPrint
     digest: e4036b6ac47a07eef5e235c5d63f57ec4d93ded67be50704329f7e16bc0ba89a
@@ -51,4 +61,4 @@ entries:
     urls:
     - https://github.com/bcgov/weasyprint/releases/download/weasyprint-0.1.2/weasyprint-0.1.2.tgz
     version: 0.1.2
-generated: "2024-08-22T19:47:11.223904987Z"
+generated: "2025-03-26T17:38:29.475687142Z"
